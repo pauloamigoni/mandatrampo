@@ -1,10 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import { query } from 'express';
 
-export default class CreateUsers1587078264591 implements MigrationInterface {
+export class CreatePhotoService1590420690971 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'users',
+        name: 'photoservices',
         columns: [
           {
             name: 'id',
@@ -14,18 +15,16 @@ export default class CreateUsers1587078264591 implements MigrationInterface {
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'name',
-            type: 'varchar',
+            name: 'services_id',
+            type: 'uuid',
           },
+
           {
-            name: 'email',
-            type: 'varchar',
-          },
-          {
-            name: 'password',
+            name: 'url',
             type: 'varchar',
             isNullable: false,
           },
+
           {
             name: 'created_at',
             type: 'timestamp',
@@ -37,11 +36,21 @@ export default class CreateUsers1587078264591 implements MigrationInterface {
             default: 'now()',
           },
         ],
+        foreignKeys: [
+          {
+            name: 'PhotoService',
+            referencedTableName: 'services',
+            referencedColumnNames: ['id'],
+            columnNames: ['services_id'],
+            onDelete: 'SET NULL',
+            onUpdate: 'CASCADE',
+          },
+        ],
       }),
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('users');
+    await queryRunner.dropTable('photoservices');
   }
 }

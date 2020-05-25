@@ -8,6 +8,7 @@ export class CreateUserCamp1590409689084 implements MigrationInterface {
         name: 'login',
         type: 'varchar',
         isNullable: false,
+        isUnique: true,
       }),
     );
   }

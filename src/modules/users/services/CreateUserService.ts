@@ -58,8 +58,9 @@ class CreateUserService {
       address,
       city,
     });
+    //    console.log('a');
 
-    await this.cacheProvider.invalidatePrefix('providers_lis');
+    // await this.cacheProvider.invalidatePrefix('providers_lis');
 
     return user;
   }

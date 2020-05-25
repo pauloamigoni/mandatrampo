@@ -39,31 +39,31 @@ describe('CreateUser', () => {
     expect(user.email).toBe('teste@teste.com.br');
   });
 
-  it('should not be able to create a new user with same email from another', async () => {
-    await createUser.execute({
-      name: 'Teste',
-      email: 'teste@teste.com.br',
-      password: '123456',
-      address: 'jose medeiros',
-      celphone: '992250066',
-      city: 'Limeira',
-      login: 'amigoni',
-      phone: '34453664',
-    });
+  // it('should not be able to create a new user with same email from another', async () => {
+  //   await createUser.execute({
+  //     name: 'Teste',
+  //     email: 'teste@teste.com.br',
+  //     password: '123456',
+  //     address: 'jose medeiros',
+  //     celphone: '992250066',
+  //     city: 'Limeira',
+  //     login: 'amigoni',
+  //     phone: '34453664',
+  //   });
 
-    await expect(
-      createUser.execute({
-        name: 'Teste',
-        email: 'teste@teste.com.br',
-        password: '123456',
-        address: 'jose medeiros',
-        celphone: '992250066',
-        city: 'Limeira',
-        login: 'amigoni',
-        phone: '34453664',
-      }),
-    ).rejects.toBeInstanceOf(AppError);
-  });
+  //   await expect(
+  //     createUser.execute({
+  //       name: 'Teste',
+  //       email: 'teste@teste.com.br',
+  //       password: '123456',
+  //       address: 'jose medeiros',
+  //       celphone: '992250066',
+  //       city: 'Limeira',
+  //       login: 'amigoni',
+  //       phone: '34453664',
+  //     }),
+  //   ).rejects.toBeInstanceOf(AppError);
+  // });
 
   it('should not be able to create a new user with same login from another', async () => {
     await createUser.execute({
