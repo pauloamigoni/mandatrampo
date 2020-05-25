@@ -24,6 +24,8 @@ app.use(routes);
 app.use(errors());
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
+  console.log(err);
+
   if (err instanceof AppError) {
     const { statusCode, message } = err;
 

@@ -15,6 +15,12 @@ import NotificationsRepository from '@modules/notifications/infra/typeorm/reposi
 import ICurriculunsRepository from '@modules/curriculuns/repositories/ICurriculunsRepository';
 import CurriculunsRepository from '@modules/curriculuns/infra/typeorm/repositories/CurriculunsRepository';
 
+import IProfessionsRepository from '@modules/professions/repositories/IProfessionsRepository';
+import ProfissionsRepository from '@modules/professions/infra/typeorm/repositories/ProfissionsRepository';
+
+import IServicesRepository from '@modules/services/repositories/IServicesRepository';
+import ServicesRepository from '@modules/services/infra/typeorm/repositories/ServicesRepository';
+
 import '@modules/users/providers';
 import './providers';
 
@@ -31,6 +37,16 @@ container.registerSingleton<IUserTokensRepository>(
 container.registerSingleton<ICurriculunsRepository>(
   'CurriculunsRepository',
   CurriculunsRepository,
+);
+
+container.registerSingleton<IProfessionsRepository>(
+  'ProfissionsRepository',
+  ProfissionsRepository,
+);
+
+container.registerSingleton<IServicesRepository>(
+  'ServicesRepository',
+  ServicesRepository,
 );
 
 container.registerSingleton<IAppointmentsRepository>(

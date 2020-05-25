@@ -22,31 +22,37 @@ export class CreateCurriculum1590419550767 implements MigrationInterface {
           {
             name: 'curriculum',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
             name: 'link_mediasocial',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
             name: 'description',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
             name: 'profession_id',
             type: 'uuid',
+            isNullable: true,
           },
 
           {
             name: 'profession_others',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
             name: 'experience_time',
             type: 'varchar',
+            isNullable: true,
           },
 
           {

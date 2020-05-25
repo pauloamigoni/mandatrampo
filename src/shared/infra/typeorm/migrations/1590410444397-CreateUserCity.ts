@@ -7,7 +7,7 @@ export class CreateUserCity1590410444397 implements MigrationInterface {
       new TableColumn({
         name: 'city',
         type: 'varchar',
-        isNullable: false,
+        isNullable: true,
       }),
     );
   }

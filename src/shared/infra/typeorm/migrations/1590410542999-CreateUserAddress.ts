@@ -7,7 +7,7 @@ export class CreateUserAddress1590410542999 implements MigrationInterface {
       new TableColumn({
         name: 'address',
         type: 'varchar',
-        isNullable: false,
+        isNullable: true,
       }),
     );
   }

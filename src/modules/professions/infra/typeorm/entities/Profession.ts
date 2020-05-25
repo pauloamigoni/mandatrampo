@@ -8,7 +8,7 @@ import {
 
 import { Exclude, Expose } from 'class-transformer';
 
-@Entity('profession')
+@Entity('professions')
 class Profession {
   @PrimaryGeneratedColumn('uuid')
   id: string;

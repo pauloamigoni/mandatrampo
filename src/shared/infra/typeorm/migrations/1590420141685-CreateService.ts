@@ -22,16 +22,19 @@ export class CreateService1590420141685 implements MigrationInterface {
           {
             name: 'name',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
             name: 'description',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
             name: 'address',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
@@ -43,43 +46,52 @@ export class CreateService1590420141685 implements MigrationInterface {
           {
             name: 'phone',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
             name: 'celphone',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
             name: 'email',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'site',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'link_facebook',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'link_instagram',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
             name: 'opening_hours',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
             name: 'categories_id',
             type: 'uuid',
+            isNullable: true,
           },
 
           {
             name: 'categories_others',
             type: 'varchar',
+            isNullable: true,
           },
 
           {
