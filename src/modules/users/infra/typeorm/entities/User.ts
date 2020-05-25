@@ -28,6 +28,21 @@ class User {
   @Column()
   avatar: string;
 
+  @Column()
+  phone: string;
+
+  @Column()
+  celphone: string;
+
+  @Column()
+  address: string;
+
+  @Column()
+  login: string;
+
+  @Column()
+  city: string;
+
   @CreateDateColumn()
   created_at: Date;
 

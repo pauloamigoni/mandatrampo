@@ -9,7 +9,7 @@ import IUsersRepository from '../repositories/IUsersRepository';
 import IHashProvider from '../providers/HashProvider/models/IHashProvider';
 
 interface IRequest {
-  email: string;
+  login: string;
   password: string;
 }
 
@@ -27,14 +27,14 @@ class AuthenticateUserService {
     private hashProvider: IHashProvider,
   ) {}
 
-  public async execute({ email, password }: IRequest): Promise<IResponse> {
-    const user = await this.usersRepository.findByEmail(email);
+  public async execute({ login, password }: IRequest): Promise<IResponse> {
+    const user = await this.usersRepository.findByLogin(login);
 
     if (
       !user ||
       !(await this.hashProvider.compareHash(password, user.password))
     ) {
-      throw new AppError('Incorret email/password combination.', 401);
+      throw new AppError('Incorret login/password combination.', 401);
     }
 
     const { secret, expiresIn } = authConfig.jwt;

@@ -11,6 +11,11 @@ interface IRequest {
   name: string;
   email: string;
   password: string;
+  login: string;
+  phone: string;
+  celphone: string;
+  address: string;
+  city: string;
 }
 @injectable()
 class CreateUserService {
@@ -25,11 +30,20 @@ class CreateUserService {
     private cacheProvider: ICacheProvider,
   ) {}
 
-  public async execute({ name, email, password }: IRequest): Promise<User> {
-    const checkUserExists = await this.usersRepository.findByEmail(email);
+  public async execute({
+    name,
+    email,
+    password,
+    login,
+    phone,
+    celphone,
+    address,
+    city,
+  }: IRequest): Promise<User> {
+    const checkUserExists = await this.usersRepository.findByLogin(login);
 
     if (checkUserExists) {
-      throw new AppError('Email address already used.');
+      throw new AppError('Login already used.');
     }
 
     const hashedPassword = await this.hashProvider.generateHash(password);
@@ -38,6 +52,11 @@ class CreateUserService {
       name,
       email,
       password: hashedPassword,
+      login,
+      phone,
+      celphone,
+      address,
+      city,
     });
 
     await this.cacheProvider.invalidatePrefix('providers_lis');
