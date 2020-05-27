@@ -9,8 +9,6 @@ export default class ServiceController {
   public async create(request: Request, response: Response): Promise<Response> {
     const user_id = request.user.id;
 
-    console.log(request.body);
-
     const {
       name,
       description,

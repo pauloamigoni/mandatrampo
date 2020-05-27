@@ -18,6 +18,9 @@ import CurriculunsRepository from '@modules/curriculuns/infra/typeorm/repositori
 import IProfessionsRepository from '@modules/professions/repositories/IProfessionsRepository';
 import ProfissionsRepository from '@modules/professions/infra/typeorm/repositories/ProfissionsRepository';
 
+import ICategoriesRepository from '@modules/categories/repositories/ICategoriesRepository';
+import CategoriesRepository from '@modules/categories/infra/typeorm/repositories/CategoriesRepository';
+
 import IServicesRepository from '@modules/services/repositories/IServicesRepository';
 import ServicesRepository from '@modules/services/infra/typeorm/repositories/ServicesRepository';
 
@@ -42,6 +45,11 @@ container.registerSingleton<ICurriculunsRepository>(
 container.registerSingleton<IProfessionsRepository>(
   'ProfissionsRepository',
   ProfissionsRepository,
+);
+
+container.registerSingleton<ICategoriesRepository>(
+  'CategoriesRepository',
+  CategoriesRepository,
 );
 
 container.registerSingleton<IServicesRepository>(

@@ -9,6 +9,7 @@ import profileRouter from '@modules/users/infra/http/routes/profile.routes';
 import curriculumRouter from '@modules/curriculuns/infra/http/routes/curriculuns.routes';
 import serviceRouter from '@modules/services/infra/http/routes/services.routes';
 import professionRouter from '@modules/professions/infra/http/routes/professions.routes';
+import categorieRouter from '@modules/categories/infra/http/routes/categories.routes';
 
 const routes = Router();
 
@@ -21,5 +22,6 @@ routes.use('/profile', profileRouter);
 routes.use('/curriculum', curriculumRouter);
 routes.use('/services', serviceRouter);
 routes.use('/profession', professionRouter);
+routes.use('/categorie', categorieRouter);
 
 export default routes;
